@@ -48,11 +48,15 @@ public class QuestionManager : MonoBehaviour
             question.isCorrect = true;
             questionTrigger.TriggerEffect();
             questionPanel.SetActive(false);
+            questionTrigger.isCorrect = true;
+            ScoreManager.Instance.AddScore(20);
         }
         else
         {
+            questionPanel.SetActive(false);
             Debug.Log("Wrong Answer");
             question.isCorrect = false;
+            ScoreManager.Instance.AddScore(-10);
         }
     }
 }

@@ -8,6 +8,7 @@ public class QuestionTrigger : MonoBehaviour
     public GameObject effectedObject;
     private GameObject marker;
     bool isMarkerActive;
+    public bool isCorrect;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class QuestionTrigger : MonoBehaviour
                 marker.SetActive(true);
                 isMarkerActive = true;
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !isCorrect)
             {
                 TriggerQuestion();
             }
